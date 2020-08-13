@@ -16,6 +16,8 @@ class WebLoginWindow(QWebView):
     window_name = 'syncsketchGUI_login_window'
     window_label = 'Login to SyncSketch'
 
+    loggedIn = QtCore.Signal()
+
     def __init__(self, parent):
         super(WebLoginWindow, self).__init__(parent)
 
@@ -60,12 +62,9 @@ class WebLoginWindow(QWebView):
                     logger.info("sleeping")
                     time.sleep(0.1)
             self.close()
-            self.parent.update_login_ui()
-            #todo: turn this into a signal
+            self.loggedIn.emit()
             #self.parent.asyncPopulateTree(withItems=False)
-            self.parent.populateTree()
             #self.parent.asyncPopulateTree(withItems=True)
-            self.parent.restore_ui_state()
 
     def _myBindingFunction(self):
         self.page().mainFrame().loadFinished.connect(self.changed)

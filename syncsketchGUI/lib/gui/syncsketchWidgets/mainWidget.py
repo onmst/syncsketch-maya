@@ -816,6 +816,9 @@ class MenuWindow(SyncSketch_Window):
         if is_connected():
             _maya_delete_ui(WebLoginWindow.window_name)
             weblogin_window = WebLoginWindow(self)
+            weblogin_window.loggedIn.connect(self.update_login_ui)
+            weblogin_window.loggedIn.connect(self.populateTree)
+            weblogin_window.loggedIn.connect(self.restore_ui_state)
 
         else:
             title='Not able to reach SyncSketch'
