@@ -184,7 +184,7 @@ class Login(ommpx.MPxCommand):
     def doIt(self, *arg):
         # TO DO: Replace with syncsketchGUI custom command
         import syncsketchGUI
-        syncsketchGUI.show_login_dialog()
+        syncsketchGUI.show_web_login_window()
     
 # ======================================================================
 # Command Creators

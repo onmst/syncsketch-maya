@@ -324,10 +324,10 @@ def update_target_from_tree(self, treeWidget):
 
 
 def show_web_login_window():
-    _maya_delete_ui(WebPage.window_name)
-    _call_ui_for_maya(WebPage)
-    # _maya_delete_ui(WebLoginWindow.window_name)
-    # _call_ui_for_maya(WebLoginWindow)
+    # _maya_delete_ui(WebPage.window_name)
+    # call_ui_for_maya(WebPage)
+    _maya_delete_ui(WebLoginWindow.window_name)
+    _call_ui_for_maya(WebLoginWindow)
 
 
 def show_menu_window():
