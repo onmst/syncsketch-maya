@@ -178,7 +178,7 @@ def parse_url_data(link=database.read_cache('upload_to_value')):
         logger.info("Link isn't a link: {}".format(link))
         return
 
-    baseUrl = 'https://syncsketch.com/sketch/'
+    baseUrl = path.sketch_url
 
     #Remove leading forward slash
     if link[-1] == "/":
@@ -245,7 +245,7 @@ def update_target_from_tree(self, treeWidget):
         item_type = selected_item.data(2, QtCore.Qt.EditRole)
     logger.info("update_target_from_tree: item_data {} item_type {}".format(item_data, item_type))
 
-    review_base_url = "https://syncsketch.com/sketch/"
+    review_base_url = path.sketch_url
     current_data={}
     current_data['upload_to_value'] = str()
     current_data['breadcrumb'] = str()

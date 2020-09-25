@@ -1,13 +1,11 @@
-import socket
 
-REMOTE_SERVER = "www.syncsketch.com"
+import urllib2
+import path
+
 
 def is_connected():
   try:
-    # see if we can resolve the host name -- tells us if there is a DNS listening
-    host = socket.gethostbyname(REMOTE_SERVER)
-    # connect to the host -- tells us if the host is actually reachable
-    s = socket.create_connection((host, 80), 2)
+    urllib2.urlopen(path.api_host_url)
     return True
   except:
      pass

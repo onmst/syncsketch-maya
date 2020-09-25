@@ -1,17 +1,19 @@
 import email
 import os
 import logging
+import url
 logger = logging.getLogger("syncsketchGUI")
 
 # ======================================================================
 # Web Paths
-api_host_url = "https://www.syncsketch.com"
+api_host_url = url.build_abs("")
 home_url = api_host_url
-project_url = api_host_url + '/pro/#project/'
-contact_url = api_host_url + '/contact/'
-signup_url = api_host_url + '/register/'
+project_url = url.build_abs('/pro/#project/')
+contact_url = url.build_abs('/contact/')
+signup_url = url.build_abs('/register/')
+sketch_url = url.build_abs('/sketch/')
 support_url = 'https://support.syncsketch.com/article/62-maya-syncsketch-integration'
-terms_url = api_host_url + '/terms/'
+terms_url = url.build_abs('/terms/')
 
 # ======================================================================
 # Module Functions

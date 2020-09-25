@@ -1,4 +1,5 @@
 from syncsketchGUI.lib import user as user
+from syncsketchGUI.lib import path as path
 from syncsketchGUI.vendor.Qt import QtCore, QtWebEngineWidgets
 from syncsketchGUI.lib.gui import qt_utils
 
@@ -9,7 +10,7 @@ class OpenPlayerView(QtWebEngineWidgets.QWebEngineView):
     window_name = 'Login'
     window_label = 'Login to SyncSketch'
 
-    def __init__(self, parent, url='https://syncsketch.com/pro'):
+    def __init__(self, parent, url= path.api_host_url):
         super(PlayerView, self).__init__(parent)
 
         self.parent = parent
