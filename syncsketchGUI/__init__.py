@@ -1,14 +1,11 @@
-from syncsketchGUI.installScripts import installGui
-from syncsketchGUI.installScripts.maintenance import getVersionDifference
 import os
 import time
 import webbrowser
-import logging
-from syncsketchGUI.lib.gui.syncsketchWidgets import infoDialog
 import pprint
 from pprint import pformat
-from syncsketchGUI.lib import user as user
 
+# Setup Logging
+import logging
 logger = logging.getLogger('syncsketchGUI')
 print("logger: {}".format(logger))
 logger.setLevel(logging.INFO)
@@ -22,6 +19,12 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 # prevent logging from bubbling up to maya's logger
 logger.propagate = 0
+
+
+from syncsketchGUI.installScripts import installGui
+from syncsketchGUI.installScripts.maintenance import getVersionDifference
+from syncsketchGUI.lib import user as user
+from syncsketchGUI.lib.gui.syncsketchWidgets import infoDialog
 
 
 # ======================================================================
