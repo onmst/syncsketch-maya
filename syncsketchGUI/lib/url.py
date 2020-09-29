@@ -5,7 +5,7 @@ import os
 logger = logging.getLogger("syncsketchGUI")
 
 DEFAULT = "https://www.syncsketch.com"
-ENV_VAR = "SYSK_URL"
+ENV_VAR = "SYNCSKETCH_URL"
 
 def _get_env_or_default_url(env_var, default):
     try:
